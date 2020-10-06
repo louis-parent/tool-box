@@ -2,13 +2,15 @@
 
 	class CSVReader
 	{
+		private $separator;
 		private $filename;
 		private $isHeaderOnFirstLine;
 		
-		public function __construct($filename, $isHeaderOnFirstLine)
+		public function __construct($filename, $isHeaderOnFirstLine, $separator = ';')
 		{
 			$this->filename = $filename;
 			$this->isHeaderOnFirstLine = $isHeaderOnFirstLine;
+			$this->separator = $separator;
 		}
 		
 		public function isHeaderOnFirstLine()
@@ -27,23 +29,25 @@
 			
 			if($this->isHeaderOnFirstLine)
 			{
-				$headerArray = explode(';', $lines[0]);
+				$headerArray = explode($this->separator, $lines[0]);
 				$start = 1;
 				
 			}
 			else
 			{
-				$headerArray = range(0, count(explode(';', $lines[0])));
+				$headerArray = range(0, count(explode($this->separator, $lines[0])));
 			}
-			
+						
 			for($i = $start; $i < count($lines); $i++)
 			{
 				$row = array();
-				$exploded = explode(';', $lines[$i]);
+				$exploded = explode($this->separator, $lines[$i]);
+			
 				for($j = 0; $j < count($exploded); $j++)
 				{
 					$row[$headerArray[$j]] = $exploded[$j];
 				}
+				
 				array_push($rows, $row);
 			}
 			
@@ -55,7 +59,7 @@
 			return self::sort($this->parse(), $filters);
 		}
 		
-		public static function sort($csv, $filters)
+		private static function sort($csv, $filters)
 		{
 			$sorted = array();
 			
