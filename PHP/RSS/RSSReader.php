@@ -1,6 +1,6 @@
 <?php
 	
-	class RSS
+	class RSSReader
 	{
 		private $rssRoot;
 		
