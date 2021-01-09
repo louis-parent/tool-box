@@ -188,5 +188,13 @@
 			return isset($this->getNthNews($i)->enclosure) ? array($this->getNthNews($i)->enclosure->attributes()['type'], $this->getNthNews($i)->enclosure->attributes()['url']) : NULL;
 		}
 	}
+	
+	class RSS extends RSSReader
+	{
+		public function __construct($file)
+		{
+			parent::__construct($file);
+		}
+	}
 ?>
 
