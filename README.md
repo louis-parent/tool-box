@@ -33,6 +33,9 @@ It's a simple Java annotation allowing to indicate that a field, a parameter, a 
 ### Translation
 A Java class to manage internationalization with .lang files.
 
+### Logger
+A Java class to log message with different levels and different ouput streams
+
 ## PHP
 ### CSV
 The CSV reader parses CSV file into an assotiative array, it maps the column name to the list of the value of each row.
