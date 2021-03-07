@@ -34,7 +34,10 @@ It's a simple Java annotation allowing to indicate that a field, a parameter, a 
 A Java class to manage internationalization with .lang files.
 
 ### Logger
-A Java class to log message with different levels and different ouput streams
+A Java class to log message with different levels and different ouput streams.
+
+### Reflection
+Some Java helper classes for Reflection.
 
 ## PHP
 ### CSV
