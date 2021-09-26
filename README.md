@@ -19,12 +19,24 @@ This class define an abstraction of a cipher and purpose a very simple and not s
 ### Socket
 The sockets classes are a binding of the C socket functions from unistd, so it's only working on unix system.
 
+### ChildProcess
+This virtual class allows to simply create child with fork restricted to the class.
+
+### Semaphore
+This class represents a single semaphore with the basic actions as methods.
+
 ## C
 ### Format IO
 This files provide a simple way to format and customize text sent to the standard output with color or style.
 
 ### UniTest
 This files provide a simple set of function to make unit tests in C with equality functions, test function and test set functions.
+
+### Fork
+This file provide a single utility function to easily do fork and restrict child to a function.
+
+### Semaphore
+This files provide utility functions to simplify single semaphore management.
 
 ## Java
 ### Nullable
